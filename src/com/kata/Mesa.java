@@ -1,6 +1,7 @@
 package com.kata;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Mesa {
 	private Repartidor repartidorActual;
@@ -72,9 +73,19 @@ public class Mesa {
 		}
 	}
 	
+	public void turnoDeRon (Jugador jugadorActual) {
+		tomarCartaDeDeck(jugadorActual);
+		botarCarta(jugadorActual);
+	}
+	
 	public void tomarCartaDeDeck(Jugador jugadorActual) {
 		jugadorActual.agregarCarta(deckActual.getCartas().get(0));
 		deckActual.getCartas().remove(0);
+	}
+	
+	public void botarCarta(Jugador jugadorActual) {
+		Collections.shuffle(jugadorActual.getMano());
+		jugadorActual.getMano().remove(0);
 	}
 	
 	public Repartidor getRepartidor() {
