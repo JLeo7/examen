@@ -32,7 +32,7 @@ class CartaTest {
 	@Test
 	public void testCompararCartasIguales() {
 		Carta cartaUno = new Carta("Ka","Escudos",10);
-		Carta cartaDos = new Carta("Dies","Flores",10);
+		Carta cartaDos = new Carta("10","Flores",10);
 		assertTrue(cartaUno.equals(cartaDos));
 	}
 
