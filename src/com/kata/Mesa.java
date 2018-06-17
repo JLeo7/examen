@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Mesa {
 	private Repartidor repartidorActual;
 	private ArrayList<Jugador> listaJugadores;
-	
+	private Carta comodin;
 	public Mesa() {
 		repartidorActual = new Repartidor();
 		listaJugadores = new ArrayList<Jugador>();
@@ -29,7 +29,7 @@ public class Mesa {
 		}
 		
 		for (Jugador obj:listaJugadores) {
-			if (obj.calcularValorMano() == valorManoGanadora || mano21YMedio(obj)) {
+			if (obj.calcularValorMano() == valorManoGanadora || mano21YMedio(obj) || manoComodin(obj)) {
 				listaGanadores.add(obj);
 			}
 		}
@@ -71,5 +71,18 @@ public class Mesa {
 		} else {
 			return false;
 		}
+	}
+	
+	private boolean manoComodin(Jugador jugadorActual) {
+		if(jugadorActual.getMano().get(0).equals(getComodin()) || jugadorActual.getMano().get(1).equals(getComodin())) return true;
+		return false;
+	}
+	
+	public void setComodin() {
+		comodin = repartidorActual.getNaipe().getCartas().get((int)Math.random() * 52);
+	}
+	
+	public Carta getComodin() {
+		return comodin;
 	}
 }
