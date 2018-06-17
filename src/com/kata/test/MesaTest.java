@@ -72,7 +72,6 @@ class MesaTest {
 	@Test
 	void testGanarConComodin() {
 		Mesa mesaActual = new Mesa();
-		mesaActual.setComodin();
 		ArrayList<Carta> manoInicial = new ArrayList<Carta>();
 		manoInicial.add(new Carta("Dies","Escudos",10));
 		manoInicial.add(mesaActual.getComodin());
@@ -80,5 +79,14 @@ class MesaTest {
 		mesaActual.annadirJugador(jugadorActual);
 		jugadorActual.setMano(manoInicial);
 		assertEquals(1,mesaActual.obtenerGanadores21().size());
+	}
+	
+	@Test
+	void testEmpezarPartidaRon() {
+		Mesa mesaActual = new Mesa();
+		Jugador jugadorActual = new Jugador("Leonardo");
+		mesaActual.annadirJugador(jugadorActual);
+		mesaActual.empezarPartidaDeRon();
+		assertEquals(7,jugadorActual.getMano().size());
 	}
 } 

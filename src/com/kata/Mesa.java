@@ -8,11 +8,24 @@ public class Mesa {
 	private Carta comodin;
 	public Mesa() {
 		repartidorActual = new Repartidor();
+		setComodin();
 		listaJugadores = new ArrayList<Jugador>();
 	}
 	
 	public void empezarAJugar21() {
 		for(Jugador obj:listaJugadores) {
+			repartidorActual.repartirCarta(obj);
+			repartidorActual.repartirCarta(obj);
+		}
+	}
+	
+	public void empezarPartidaDeRon() {
+		for(Jugador obj:listaJugadores) {
+			repartidorActual.repartirCarta(obj);
+			repartidorActual.repartirCarta(obj);
+			repartidorActual.repartirCarta(obj);
+			repartidorActual.repartirCarta(obj);
+			repartidorActual.repartirCarta(obj);
 			repartidorActual.repartirCarta(obj);
 			repartidorActual.repartirCarta(obj);
 		}
