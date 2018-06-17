@@ -1,15 +1,15 @@
 package com.kata.test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import com.kata.Naipe;
 
-class NaipeTest {
+public class NaipeTest {
 	
 	@Test
-	void testNaipeUsable() {
+	public void testNaipeUsable() {
 		Naipe nuevoNaipe = new Naipe();
 		assertEquals(52, nuevoNaipe.getCartas().size());
 	}

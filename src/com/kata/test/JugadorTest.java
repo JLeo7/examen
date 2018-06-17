@@ -1,16 +1,16 @@
 package com.kata.test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import com.kata.Carta;
 import com.kata.Jugador;
 
-class JugadorTest {
+public class JugadorTest {
 
 	@Test
-	void testJugador() {
+	public void testJugador() {
 		Jugador jugadorActual = new Jugador("Leonardo");
 		Carta nuevaCarta = new Carta("As","Escudos",1);
 		jugadorActual.agregarCarta(nuevaCarta);

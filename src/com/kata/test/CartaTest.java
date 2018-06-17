@@ -1,20 +1,17 @@
 package com.kata.test;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import com.kata.Carta;
 
-class CartaTest {
+public class CartaTest {
 	
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void testValorInvalido () throws Exception {
-		Carta cartaUno = new Carta("","",0);
-		Carta cartaDos = new Carta("","",11);
-		assertFalse(cartaUno.getValor() > 1 && cartaUno.getValor() < 10);
-		assertFalse(cartaDos.getValor() > 1 && cartaDos.getValor() < 10);
+		new Carta("","",0);
+		new Carta("","",11);
 	}
 	
 	@Test

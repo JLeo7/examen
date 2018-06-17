@@ -1,16 +1,16 @@
 package com.kata.test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import com.kata.Jugador;
 import com.kata.Mesa;
 
-class RepartidorTest {
+public class RepartidorTest {
 
 	@Test
-	void testReparticionCarta() {
+	public void testReparticionCarta() {
 		Mesa mesaActual = new Mesa();
 		Jugador jugadorActual = new Jugador("Leonardo");
 		mesaActual.annadirJugador(jugadorActual);

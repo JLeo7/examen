@@ -1,25 +1,25 @@
 package com.kata.test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
+
+import org.junit.Test;
 
 import java.util.ArrayList;
-
-import org.junit.jupiter.api.Test;
 
 import com.kata.Carta;
 import com.kata.Jugador;
 import com.kata.Mesa;
 
-class MesaTest {
+public class MesaTest {
 
 	@Test
-	void testMesaInicial() {
+	public void testMesaInicial() {
 		Mesa mesaActual = new Mesa();
 		assertEquals(0,mesaActual.getListaJugadores().size());
 	}
 	
 	@Test
-	void testAnnadirJugador() {
+	public void testAnnadirJugador() {
 		Mesa mesaActual = new Mesa();
 		Jugador jugadorActual = new Jugador("Leonardo");
 		mesaActual.annadirJugador(jugadorActual);
@@ -27,7 +27,7 @@ class MesaTest {
 	}
 	
 	@Test
-	void testEmpezarJuego21() {
+	public void testEmpezarJuego21() {
 		Mesa mesaActual = new Mesa();
 		Jugador jugadorActual = new Jugador("Leonardo");
 		mesaActual.annadirJugador(jugadorActual);
@@ -36,7 +36,7 @@ class MesaTest {
 	}
 	
 	@Test
-	void testObtenerGanadores21() {
+	public void testObtenerGanadores21() {
 		Mesa mesaActual = new Mesa();
 		Jugador jugadorActual = new Jugador("Leonardo");
 		mesaActual.annadirJugador(jugadorActual);
@@ -45,7 +45,7 @@ class MesaTest {
 	}
 	
 	@Test
-	void testCambioDeMano() {
+	public void testCambioDeMano() {
 		Mesa mesaActual = new Mesa();
 		ArrayList<Carta> manoInicial = new ArrayList<Carta>();
 		manoInicial.add(new Carta("Quina","Escudos",10));
@@ -58,7 +58,7 @@ class MesaTest {
 	}
 	
 	@Test
-	void testGanarCon21YMedio() {
+	public void testGanarCon21YMedio() {
 		Mesa mesaActual = new Mesa();
 		ArrayList<Carta> manoInicial = new ArrayList<Carta>();
 		manoInicial.add(new Carta("Dies","Escudos",10));
@@ -70,7 +70,7 @@ class MesaTest {
 	}
 	
 	@Test
-	void testGanarConComodin() {
+	public void testGanarConComodin() {
 		Mesa mesaActual = new Mesa();
 		ArrayList<Carta> manoInicial = new ArrayList<Carta>();
 		manoInicial.add(new Carta("Dies","Escudos",10));
@@ -82,7 +82,7 @@ class MesaTest {
 	}
 	
 	@Test
-	void testEmpezarPartidaRon() {
+	public void testEmpezarPartidaRon() {
 		Mesa mesaActual = new Mesa();
 		Jugador jugadorActual = new Jugador("Leonardo");
 		mesaActual.annadirJugador(jugadorActual);
@@ -91,7 +91,7 @@ class MesaTest {
 	}
 	
 	@Test
-	void testTomarCarta() {
+	public void testTomarCarta() {
 		Mesa mesaActual = new Mesa();
 		Jugador jugadorActual = new Jugador("Leonardo");
 		mesaActual.annadirJugador(jugadorActual);
@@ -101,7 +101,7 @@ class MesaTest {
 	}
 	
 	@Test
-	void testBotarCarta() {
+	public void testBotarCarta() {
 		Mesa mesaActual = new Mesa();
 		Jugador jugadorActual = new Jugador("Leonardo");
 		mesaActual.annadirJugador(jugadorActual);
@@ -111,7 +111,7 @@ class MesaTest {
 	}
 	
 	@Test
-	void testResetMesa() {
+	public void testResetMesa() {
 		Mesa mesaActual = new Mesa();
 		Jugador jugadorActual = new Jugador("Leonardo");
 		mesaActual.annadirJugador(jugadorActual);

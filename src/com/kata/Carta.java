@@ -11,9 +11,13 @@ public class Carta {
 	}
 	
 	public Carta(String nombre, String palo,int valor) {
-		this.nombre = nombre;
-		this.palo = palo;
-		this.valor = valor;
+		if(valor >= 1 && valor <= 10) {
+			this.nombre = nombre;
+			this.palo = palo;
+			this.valor = valor;
+		} else {
+			throw new IllegalArgumentException("Valor no permitido.");
+		}
 	}
 	
 	public String getNombre() {
