@@ -10,4 +10,9 @@ public class Repartidor {
 	public Naipe getNaipe() {
 		return naipeActual;
 	}
+	
+	public void repartirCarta(Jugador jugadorActual) {
+		jugadorActual.agregarCarta(naipeActual.getCartas().get(0));
+		naipeActual.getCartas().remove(0);
+	}
 }
