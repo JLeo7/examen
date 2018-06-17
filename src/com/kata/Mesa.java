@@ -18,6 +18,25 @@ public class Mesa {
 		}
 	}
 	
+	public ArrayList<Jugador> obtenerGanadores21() {
+		int valorManoGanadora = 0;
+		ArrayList<Jugador> listaGanadores = new ArrayList<Jugador>();
+		
+		for (Jugador obj:listaJugadores) {
+			if (obj.calcularValorMano() >= valorManoGanadora && obj.calcularValorMano() <= 21) {
+				valorManoGanadora = obj.calcularValorMano();
+			}
+		}
+		
+		for (Jugador obj:listaJugadores) {
+			if (obj.calcularValorMano() == valorManoGanadora) {
+				listaGanadores.add(obj);
+			}
+		}
+		
+		return listaGanadores;
+	}
+	
 	public void annadirJugador(Jugador nuevoJugador) {
 		listaJugadores.add(nuevoJugador);
 	}

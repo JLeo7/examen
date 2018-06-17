@@ -15,6 +15,10 @@ public class Jugador {
 		mano = new ArrayList<Carta>();
 	}
 	
+	public int calcularValorMano() {
+		return mano.get(0).getValor()+mano.get(0).getValor();
+	}
+	
 	public void agregarCarta(Carta nuevaCarta) {
 		mano.add(nuevaCarta);
 	}

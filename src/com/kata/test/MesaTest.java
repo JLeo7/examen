@@ -31,4 +31,13 @@ class MesaTest {
 		mesaActual.empezarAJugar21();
 		assertEquals(2, jugadorActual.getMano().size());
 	}
+	
+	@Test
+	void testObtenerGanadores21() {
+		Mesa mesaActual = new Mesa();
+		Jugador jugadorActual = new Jugador("Leonardo");
+		mesaActual.annadirJugador(jugadorActual);
+		mesaActual.empezarAJugar21();
+		assertTrue(mesaActual.obtenerGanadores21().size()>=1);
+	}
 }
