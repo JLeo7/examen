@@ -23,13 +23,13 @@ public class Mesa {
 		ArrayList<Jugador> listaGanadores = new ArrayList<Jugador>();
 		
 		for (Jugador obj:listaJugadores) {
-			if (obj.calcularValorMano() >= valorManoGanadora && obj.calcularValorMano() <= 21) {
+			if (obj.calcularValorMano() >= valorManoGanadora) {
 				valorManoGanadora = obj.calcularValorMano();
 			}
 		}
 		
 		for (Jugador obj:listaJugadores) {
-			if (obj.calcularValorMano() == valorManoGanadora) {
+			if (obj.calcularValorMano() == valorManoGanadora || mano21YMedio(obj)) {
 				listaGanadores.add(obj);
 			}
 		}
@@ -62,5 +62,14 @@ public class Mesa {
 	
 	public ArrayList<Jugador> getListaJugadores() {
 		return listaJugadores;
+	}
+	
+	private boolean mano21YMedio(Jugador jugadorActual) {
+		if(jugadorActual.calcularValorMano() == 12 && (jugadorActual.getMano().get(0).getNombre().equals("Dos") 
+				|| jugadorActual.getMano().get(1).getNombre().equals("Dos"))) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

@@ -56,4 +56,16 @@ class MesaTest {
 		mesaActual.cambiarDeMano(jugadorActual);
 		assertTrue(jugadorActual.calcularValorMano() != 13);
 	}
+	
+	@Test
+	void testGanarCon21YMedio() {
+		Mesa mesaActual = new Mesa();
+		ArrayList<Carta> manoInicial = new ArrayList<Carta>();
+		manoInicial.add(new Carta("Dies","Escudos",10));
+		manoInicial.add(new Carta("Dos","Escudos",2));
+		Jugador jugadorActual = new Jugador("Leonardo");
+		jugadorActual.setMano(manoInicial);
+		mesaActual.annadirJugador(jugadorActual);
+		assertEquals(1,mesaActual.obtenerGanadores21().size());
+	}
 } 
