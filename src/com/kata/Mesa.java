@@ -10,11 +10,11 @@ public class Mesa {
 	private Carta comodin;
 	public Mesa() {
 		repartidorActual = new Repartidor();
-		setComodin();
 		listaJugadores = new ArrayList<Jugador>();
 	}
 	
 	public void empezarAJugar21() {
+		setComodin();
 		for(Jugador obj:listaJugadores) {
 			repartidorActual.repartirCarta(obj);
 			repartidorActual.repartirCarta(obj);
@@ -108,6 +108,11 @@ public class Mesa {
 	private boolean manoComodin(Jugador jugadorActual) {
 		if(jugadorActual.getMano().get(0).equals(getComodin()) || jugadorActual.getMano().get(1).equals(getComodin())) return true;
 		return false;
+	}
+	
+	public void resetMesa() {
+		repartidorActual = new Repartidor();
+		listaJugadores = new ArrayList<Jugador>();
 	}
 	
 	public void setComodin() {

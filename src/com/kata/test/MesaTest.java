@@ -109,4 +109,14 @@ class MesaTest {
 		mesaActual.turnoDeRon(jugadorActual);
 		assertEquals(7,jugadorActual.getMano().size());
 	}
+	
+	@Test
+	void testResetMesa() {
+		Mesa mesaActual = new Mesa();
+		Jugador jugadorActual = new Jugador("Leonardo");
+		mesaActual.annadirJugador(jugadorActual);
+		mesaActual.resetMesa();
+		assertEquals(52, mesaActual.getRepartidor().getNaipe().getCartas().size());
+		assertEquals(0, mesaActual.getListaJugadores().size());
+	}
 } 
