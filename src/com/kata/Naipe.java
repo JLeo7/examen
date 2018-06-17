@@ -1,6 +1,7 @@
 package com.kata;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Naipe {
 	private ArrayList<Carta> cartas;
@@ -8,6 +9,7 @@ public class Naipe {
 	public Naipe() {
 		cartas = new ArrayList<Carta>();
 		annadirCartas();
+		barajarCartas();
 	}
 	
 	public ArrayList<Carta> getCartas() {
@@ -67,5 +69,9 @@ public class Naipe {
 		cartas.add(new Carta("Jota","Gotas",10));
 		cartas.add(new Carta("Quina","Gotas",10));
 		cartas.add(new Carta("Ka","Gotas",10));
+	}
+	
+	private void barajarCartas() {
+		Collections.shuffle(cartas);
 	}
 }
