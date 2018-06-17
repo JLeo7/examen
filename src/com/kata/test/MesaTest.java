@@ -2,8 +2,11 @@ package com.kata.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.Test;
 
+import com.kata.Carta;
 import com.kata.Jugador;
 import com.kata.Mesa;
 
@@ -40,4 +43,17 @@ class MesaTest {
 		mesaActual.empezarAJugar21();
 		assertTrue(mesaActual.obtenerGanadores21().size()>=1);
 	}
-}
+	
+	@Test
+	void testCambioDeMano() {
+		Mesa mesaActual = new Mesa();
+		ArrayList<Carta> manoInicial = new ArrayList<Carta>();
+		manoInicial.add(new Carta("Quina","Escudos",10));
+		manoInicial.add(new Carta("Tres","Escudos",3));
+		Jugador jugadorActual = new Jugador("Leonardo");
+		jugadorActual.setMano(manoInicial);
+		mesaActual.annadirJugador(jugadorActual);
+		mesaActual.cambiarDeMano(jugadorActual);
+		assertTrue(jugadorActual.calcularValorMano() != 13);
+	}
+} 
