@@ -11,10 +11,15 @@ public class Mesa {
 		listaJugadores = new ArrayList<Jugador>();
 	}
 	
-	public void annadirJugador(Jugador nuevoJugador) {
-		if(getListaJugadores().size() < 4) {
-			listaJugadores.add(nuevoJugador);
+	public void empezarAJugar21() {
+		for(Jugador obj:listaJugadores) {
+			repartidorActual.repartirCarta(obj);
+			repartidorActual.repartirCarta(obj);
 		}
+	}
+	
+	public void annadirJugador(Jugador nuevoJugador) {
+		listaJugadores.add(nuevoJugador);
 	}
 	
 	public Repartidor getRepartidor() {
