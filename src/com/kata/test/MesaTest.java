@@ -89,4 +89,14 @@ class MesaTest {
 		mesaActual.empezarPartidaDeRon();
 		assertEquals(7,jugadorActual.getMano().size());
 	}
+	
+	@Test
+	void testTomarCarta() {
+		Mesa mesaActual = new Mesa();
+		Jugador jugadorActual = new Jugador("Leonardo");
+		mesaActual.annadirJugador(jugadorActual);
+		mesaActual.empezarPartidaDeRon();
+		mesaActual.tomarCartaDeDeck(jugadorActual);
+		assertEquals(8,jugadorActual.getMano().size());
+	}
 } 

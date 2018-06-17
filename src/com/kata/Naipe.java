@@ -12,6 +12,10 @@ public class Naipe {
 		barajarCartas();
 	}
 	
+	public void setCartas(ArrayList<Carta> cartas) {
+		this.cartas = cartas;
+	}
+	
 	public ArrayList<Carta> getCartas() {
 		return cartas;
 	}

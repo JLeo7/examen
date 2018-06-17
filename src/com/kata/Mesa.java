@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Mesa {
 	private Repartidor repartidorActual;
+	private Deck deckActual;
 	private ArrayList<Jugador> listaJugadores;
 	private Carta comodin;
 	public Mesa() {
@@ -29,6 +30,8 @@ public class Mesa {
 			repartidorActual.repartirCarta(obj);
 			repartidorActual.repartirCarta(obj);
 		}
+		deckActual = new Deck();
+		deckActual.setCartas(repartidorActual.getNaipe().getCartas());
 	}
 	
 	public ArrayList<Jugador> obtenerGanadores21() {
@@ -67,6 +70,11 @@ public class Mesa {
 				repartidorActual.repartirCarta(jugadorActual);
 			}
 		}
+	}
+	
+	public void tomarCartaDeDeck(Jugador jugadorActual) {
+		jugadorActual.agregarCarta(deckActual.getCartas().get(0));
+		deckActual.getCartas().remove(0);
 	}
 	
 	public Repartidor getRepartidor() {
