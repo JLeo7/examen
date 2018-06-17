@@ -28,5 +28,12 @@ class CartaTest {
 		assertEquals("Estrellas",cartaEstrella.getPalo());
 		assertEquals("Gotas",cartaGota.getPalo());
 	}
+	
+	@Test
+	public void testCompararCartasIguales() {
+		Carta cartaUno = new Carta("Ka","Escudos",10);
+		Carta cartaDos = new Carta("Dies","Flores",10);
+		assertTrue(cartaUno.equals(cartaDos));
+	}
 
 }
